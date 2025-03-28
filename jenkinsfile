@@ -1,10 +1,16 @@
 pipeline {
     agent any
-    
     stages {
-        stage('Devesh') {
+        stage('Checkout') {
             steps {
-                echo 'Hello Devesh'
+                git branch: 'master',
+                url: 'https://github.com/deveshanim3/jenkinsPractice.git'
+            }
+        }
+
+        stage('Print Msg') {
+            steps {
+                echo 'Hellow World!'
             }
         }
     }
